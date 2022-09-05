@@ -748,6 +748,12 @@
     "/dbmv/:category?": [
         "kba977"
     ],
+    "/dcard/posts/:type?": [
+        "DIYgod"
+    ],
+    "/dcard/:section/:type?": [
+        "HenryQW"
+    ],
     "/ddosi/": [
         "XinRoom"
     ],
@@ -1349,6 +1355,9 @@
     ],
     "/gov/nmpa/:path+": [
         "TonyRL"
+    ],
+    "/gov/nopss/:path+": [
+        "nczitzk"
     ],
     "/gov/nrta/news/:category?": [
         "yuxinliu-alex"
@@ -4477,7 +4486,6 @@
     "/instapaper/person/:name": [],
     "/ui-cn/article": [],
     "/ui-cn/user/:id": [],
-    "/dcard/:section/:type?": [],
     "/bjp/apod": [],
     "/luogu/daily/:id?": [],
     "/luogu/contest": [],
