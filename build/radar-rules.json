@@ -3920,6 +3920,14 @@
           "/:user/:repo/wiki"
         ],
         "target": "/github/wiki/:user/:repo/:page"
+      },
+      {
+        "title": "Notifications 通知",
+        "docs": "https://docs.rsshub.app/programming.html#github",
+        "source": [
+          "/notifications"
+        ],
+        "target": "/github/notifications"
       }
     ]
   },
@@ -6968,6 +6976,20 @@
           "/user/:id"
         ],
         "target": "/gelonghui/user/:id"
+      }
+    ]
+  },
+  "geocaching.com": {
+    "_name": "Geocaching",
+    ".": [
+      {
+        "title": "博客更新",
+        "docs": "https://docs.rsshub.app/blog.html#geocaching",
+        "source": [
+          "/blog/",
+          "/"
+        ],
+        "target": "/geocaching/blogs"
       }
     ]
   },
@@ -12233,15 +12255,23 @@
     ]
   },
   "line.me": {
-    "_name": "LINE Today",
+    "_name": "LINE",
     ".": [
       {
-        "title": "LINE Today",
+        "title": "Today",
         "docs": "https://docs.rsshub.app/new-media.html#line-today",
         "source": [
           "/"
         ],
         "target": "/line/today/:edition?/:tab?"
+      },
+      {
+        "title": "Today - 频道",
+        "docs": "https://docs.rsshub.app/new-media.html#line-today",
+        "source": [
+          "/:edition/v2/publisher/:id"
+        ],
+        "target": "/line/today/:edition/publisher/:id"
       }
     ]
   },
@@ -20524,6 +20554,20 @@
         "source": [
           "/book/:id"
         ]
+      }
+    ]
+  },
+  "wfdf.sport": {
+    "_name": "WFDF",
+    ".": [
+      {
+        "title": "News",
+        "docs": "https://docs.rsshub.app/other.html#wfdf",
+        "source": [
+          "/news/",
+          "/"
+        ],
+        "target": "/wfdf/news"
       }
     ]
   },
