@@ -25,10 +25,12 @@ export const route: Route = {
         supportPodcast: false,
         supportScihub: false,
     },
-    radar: {
-        source: ['space.bilibili.com/:uid'],
-        target: '/user/followers/:uid',
-    },
+    radar: [
+        {
+            source: ['space.bilibili.com/:uid'],
+            target: '/user/followers/:uid',
+        },
+    ],
     name: 'UP 主粉丝',
     maintainers: ['Qixingchen'],
     handler,
@@ -43,7 +45,7 @@ async function handler(ctx) {
 
     const cookie = config.bilibili.cookies[loginUid];
     if (cookie === undefined) {
-        throw new Error('缺少对应 loginUid 的 Bilibili 用户登录后的 Cookie 值 <a href="https://docs.rsshub.app/install/#pei-zhi-bu-fen-rss-mo-kuai-pei-zhi">bilibili 用户关注动态系列路由</a>');
+        throw new Error('缺少对应 loginUid 的 Bilibili 用户登录后的 Cookie 值 <a href="https://docs.rsshub.app/zh/deploy/config#route-specific-configurations">bilibili 用户关注动态系列路由</a>');
     }
 
     const name = await cache.getUsernameFromUID(uid);

@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import randUserAgent from '@/utils/rand-user-agent';
-import got from 'got';
+import { ofetch } from 'ofetch';
 
 let envs = process.env;
 
@@ -252,6 +252,7 @@ export type Config = {
         oauthTokenSecrets?: string[];
         username?: string;
         password?: string;
+        cookie?: string;
     };
     weibo: {
         app_key?: string;
@@ -591,7 +592,7 @@ const calculateValue = () => {
             oauthTokenSecrets: envs.TWITTER_OAUTH_TOKEN_SECRET?.split(','),
             username: envs.TWITTER_USERNAME,
             password: envs.TWITTER_PASSWORD,
-            authenticationSecret: envs.TWITTER_AUTHENTICATION_SECRET,
+            cookie: envs.TWITTER_COOKIE,
         },
         weibo: {
             app_key: envs.WEIBO_APP_KEY,
@@ -633,9 +634,8 @@ const calculateValue = () => {
 calculateValue();
 
 if (envs.REMOTE_CONFIG) {
-    got.get(envs.REMOTE_CONFIG)
-        .then(async (response) => {
-            const data = JSON.parse(response.body);
+    ofetch(envs.REMOTE_CONFIG)
+        .then(async (data) => {
             if (data) {
                 envs = Object.assign(envs, data);
                 calculateValue();

@@ -22,9 +22,11 @@ export const route: Route = {
         supportPodcast: false,
         supportScihub: false,
     },
-    radar: {
-        source: ['miyoushe.com/:game/timeline'],
-    },
+    radar: [
+        {
+            source: ['miyoushe.com/:game/timeline'],
+        },
+    ],
     name: '米游社 - 用户关注动态',
     maintainers: ['CaoMeiYouRen'],
     handler,
@@ -35,7 +37,7 @@ export const route: Route = {
 
 async function handler(ctx) {
     if (!config.mihoyo.cookie) {
-        throw new Error('Miyoushe Timeline is not available due to the absense of [Miyoushe Cookie]. Check <a href="https://docs.rsshub.app/install/#pei-zhi-bu-fen-rss-mo-kuai-pei-zhi">relevant config tutorial</a>');
+        throw new Error('Miyoushe Timeline is not available due to the absense of [Miyoushe Cookie]. Check <a href="https://docs.rsshub.app/deploy/config#route-specific-configurations">relevant config tutorial</a>');
     }
 
     const page_size = ctx.req.query('limit') || '20';
